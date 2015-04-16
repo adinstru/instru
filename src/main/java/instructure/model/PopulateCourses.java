@@ -15,10 +15,14 @@ import java.util.Map;
  */
 public class PopulateCourses {
 
-    public static Map<Long, Course> getCoursesList() throws IOException {
+    public static Map<Long, Course> getCoursesList() {
 
         CsvClient<Course> csvCourseReader = null;
-        csvCourseReader = new CsvClientImpl<Course>(ReadCSV.getReader(), Course.class);
+        try {
+            csvCourseReader = new CsvClientImpl<Course>(ReadCSV.getReader(), Course.class);
+        } catch (IOException e) {
+            e.printStackTrace();
+        }
 
 
         List<Course> courseListFromCSV = null;
