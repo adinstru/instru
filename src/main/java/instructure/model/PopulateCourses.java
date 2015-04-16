@@ -16,7 +16,7 @@ import java.util.Map;
 public class PopulateCourses {
 
     public static Map<Long, Course> getCoursesList() {
-
+        //Read mapped csv file to java bean
         CsvClient<Course> csvCourseReader = null;
         try {
             csvCourseReader = new CsvClientImpl<Course>(ReadCSV.getReader(), Course.class);
@@ -24,7 +24,7 @@ public class PopulateCourses {
             e.printStackTrace();
         }
 
-
+        //Build the courseList
         List<Course> courseListFromCSV = null;
         try {
             courseListFromCSV = csvCourseReader.readBeans();
@@ -32,6 +32,7 @@ public class PopulateCourses {
             throw new AssertionError("Invalid csv format " +exception.getMessage());
         }
 
+        //Create a unique active map
         Map<Long, Course> uniqueActiveCourseMap = new HashMap<>();
         for(Course course: courseListFromCSV){
             if(course.getState().equalsIgnoreCase("active")){
@@ -40,6 +41,5 @@ public class PopulateCourses {
         }
 
         return uniqueActiveCourseMap;
-
     }
 }
