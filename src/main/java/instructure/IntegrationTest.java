@@ -28,6 +28,4 @@ public class IntegrationTest {
     @Test  public void ReallyLongStatusCourseTest(){}
     @Test  public void InvalidCharacterCourseNameCourseTest(){}
     @Test  public void CourseNameWithCommaCourseTest(){}
-
-
 }
