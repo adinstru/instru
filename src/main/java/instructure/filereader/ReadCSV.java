@@ -20,7 +20,16 @@ public class ReadCSV {
         for(String pack: readLines){
             readString =readString+pack+"\n";
         }
-
         return new StringReader(new String(readString));
     }
+    //TODO remove duplicate
+    public static Reader getStudentReader() throws IOException {
+        String readString ="";
+        List<String> readLines = Files.readAllLines(Paths.get("students.csv"), StandardCharsets.US_ASCII);
+        for(String pack: readLines){
+            readString =readString+pack+"\n";
+        }
+        return new StringReader(new String(readString));
+    }
+
 }

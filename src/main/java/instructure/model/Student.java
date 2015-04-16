@@ -37,4 +37,12 @@ public class Student {
     @CsvCell(columnName = "state")
     private String state;
 
+    @Override
+    public String toString(){
+        return
+                "user_id: "+user_id+"\n"+
+                "user_name: "+user_name+"\n"+
+                "course_id: "+course_id+"\n"+
+                "state: "+state+"\n";
+    }
 }
