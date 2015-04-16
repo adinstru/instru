@@ -3,6 +3,7 @@ package hello;
 import hello.Greeting;
 import instructure.model.Course;
 import instructure.model.PopulateCourses;
+import instructure.model.PopulateStudent;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
@@ -20,6 +21,6 @@ public class CourseController {
 
     @RequestMapping(value = "/courses", method = RequestMethod.GET)
     public Map<Long, Course> course() {
-        return PopulateCourses.getCoursesList();
+        return PopulateStudent.getCoursesStudentList();
     }
 }
