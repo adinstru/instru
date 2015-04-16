@@ -45,4 +45,18 @@ public class Student {
                 "course_id: "+course_id+"\n"+
                 "state: "+state+"\n";
     }
+
+    @Override
+    public boolean equals(Object obj){
+        if (!(obj instanceof Student))
+            return false;
+        if (obj == this)
+            return true;
+
+        Student student = (Student) obj;
+        return this.getCourse_id().equals(student.course_id)&&
+                this.getState().equals(student.getState()) &&
+                this.getUser_name().equals(student.getUser_name())&&
+                this.getUser_id().equals(student.getUser_id());
+    }
 }

@@ -58,4 +58,26 @@ public class PopulateStudent {
         }
         return listCoursesMutable;
     }
+
+    public static String formatterCourses(Map<Long, Course> displayMap){
+        String formattedDisplay ="";
+        for (Map.Entry<Long, Course> entry : displayMap.entrySet()){
+            formattedDisplay=formattedDisplay+"CourseId: "+entry.getValue().getCourse_id()+"\t  "+
+                    entry.getValue().getCourse_name()+"("+entry.getValue().getState() +")<BR>"+
+            getSetString(entry.getValue().getEnrolledStudents());
+        }
+        return formattedDisplay;
+    }
+
+    private static String getSetString(Set<Student> enrolledStudents) {
+        String listOfEnrolledStudents ="";
+        if(enrolledStudents.size()<=0){
+            listOfEnrolledStudents = "No active students enrolled for this course";
+        }
+        for(Student student: enrolledStudents){
+            listOfEnrolledStudents = listOfEnrolledStudents+"UserId: "+student.getUser_id()
+                    +"\t   "+student.getUser_name()+"("+student.getState()+")<BR>";
+        }
+        return listOfEnrolledStudents.concat("<BR>---------------------------------------<BR>");
+    }
 }

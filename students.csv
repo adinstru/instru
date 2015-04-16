@@ -1,6 +1,8 @@
 user_id,user_name,course_id,state
-19083, Yoda, 1, Inactive
+19083, Yoda, 1, active
 19084, Luke Skywalker, 2, Active
-19085, James Cameron, 1, Active
-19086, Phil Dunfey, 2, Inactive
+19085, James Camero'n II, 1, Active
+19085, Indy Jones, 1, Active
+19088, Alice Cooper, 3, Active
+19086, Phil Dunfey, 2, inactive
 19089, Adam Sandler, 49012, Active
