@@ -8,7 +8,10 @@ import org.testng.annotations.Test;
 public class IntegrationTest {
 
     //Happy Test cases
-    @Test  public void allActiveCourseActiveStudentsTest(){}
+    @Test  public void allActiveCourseActiveStudentsTest(){
+
+    }
+
     @Test  public void ZeroActiveCourseAllActiveStudentsTest(){}
     @Test  public void AllActiveCourseZeroActiveStudentsTest(){}
     @Test  public void ZeroActiveCourseZeroActiveStudentsTest(){}

@@ -20,8 +20,12 @@ import java.util.Map;
 public class CourseController {
 
     @RequestMapping(value = "/courses", method = RequestMethod.GET)
-//    public Map<Long, Course> course() {
     public String course() {
         return PopulateStudent.formatterCourses(PopulateStudent.getCoursesStudentList());
+    }
+
+    @RequestMapping(value = "/coursejson", method = RequestMethod.GET)
+    public Map<Long, Course> courseJson() {
+        return PopulateStudent.getCoursesStudentList();
     }
 }
