@@ -18,4 +18,10 @@ public class ReadCSVTest {
         Reader value = ReadCSV.getReader();
         Assert.assertNotNull(value);
     }
+
+    @Test
+    public void happyStudentFileTest() throws IOException {
+        Reader value = ReadCSV.getStudentReader();
+        Assert.assertNotNull(value);
+    }
 }
