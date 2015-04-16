@@ -32,9 +32,14 @@ public class ReadCSV {
         return new StringReader(new String(readString));
     }
 
-    public static Reader givenReader(String fileName) throws IOException {
+    public static Reader givenReader(String fileName){
         String readString ="";
-        List<String> readLines = Files.readAllLines(Paths.get(fileName), StandardCharsets.US_ASCII);
+        List<String> readLines = null;
+        try {
+            readLines = Files.readAllLines(Paths.get(fileName), StandardCharsets.US_ASCII);
+        } catch (IOException e) {
+            throw new AssertionError(fileName+" File not found "+e.getMessage());
+        }
         for(String pack: readLines){
             readString =readString+pack+"\n";
         }

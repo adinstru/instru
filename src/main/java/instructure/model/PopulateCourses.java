@@ -22,11 +22,8 @@ public class PopulateCourses {
     public static Map<Long, Course> getCoursesList(String fileName) {
         //Read mapped csv file to java bean
         CsvClient<Course> csvCourseReader = null;
-        try {
-            csvCourseReader = new CsvClientImpl<Course>(ReadCSV.givenReader(fileName), Course.class);
-        } catch (IOException e) {
-            e.printStackTrace();
-        }
+        csvCourseReader = new CsvClientImpl<Course>(ReadCSV.givenReader(fileName), Course.class);
+
 
         //Build the courseList
         List<Course> courseListFromCSV = null;
