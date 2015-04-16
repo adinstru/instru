@@ -1,5 +1,8 @@
 package instructure;
 
+import instructure.model.PopulateCourses;
+import instructure.model.PopulateStudent;
+import org.testng.Assert;
 import org.testng.annotations.Test;
 
 /**
@@ -9,7 +12,7 @@ public class IntegrationTest {
 
     //Happy Test cases
     @Test  public void allActiveCourseActiveStudentsTest(){
-
+        Assert.assertEquals(PopulateStudent.getCoursesStudentList().size(), 4);
     }
 
     @Test  public void ZeroActiveCourseAllActiveStudentsTest(){}

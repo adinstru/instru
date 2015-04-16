@@ -32,4 +32,13 @@ public class ReadCSV {
         return new StringReader(new String(readString));
     }
 
+    public static Reader givenReader(String fileName) throws IOException {
+        String readString ="";
+        List<String> readLines = Files.readAllLines(Paths.get(fileName), StandardCharsets.US_ASCII);
+        for(String pack: readLines){
+            readString =readString+pack+"\n";
+        }
+        return new StringReader(new String(readString));
+    }
+
 }

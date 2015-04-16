@@ -17,14 +17,18 @@ import java.util.Set;
 public class PopulateStudent {
 
     public static Map<Long, Course> getCoursesStudentList() {
+        return getCoursesStudentList("courses.csv", "students.csv");
+    }
+
+    public static Map<Long, Course> getCoursesStudentList(String fileCourse, String fileStudent) {
         //Get a list of course, need to validate the csv file for student has valid courseIds
-        Map<Long, Course> listCoursesMutable = PopulateCourses.getCoursesList();
+        Map<Long, Course> listCoursesMutable = PopulateCourses.getCoursesList(fileCourse);
         Set<Long> validCourseIDs = listCoursesMutable.keySet();
 
         //Read mapped csv file to java bean
         CsvClient<Student> csvStudentReader = null;
         try {
-            csvStudentReader = new CsvClientImpl<Student>(ReadCSV.getStudentReader(), Student.class);
+            csvStudentReader = new CsvClientImpl<Student>(ReadCSV.givenReader(fileStudent), Student.class);
         } catch (IOException e) {
             e.printStackTrace();
         }
