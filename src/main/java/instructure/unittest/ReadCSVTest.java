@@ -17,6 +17,5 @@ public class ReadCSVTest {
     public void happyTest() throws IOException {
         Reader value = ReadCSV.getReader();
         Assert.assertNotNull(value);
-
     }
 }
